@@ -1,4 +1,4 @@
-# kondonz
+# \emph{kodonz}
 A comprehensive codon analysis R package
 
 ## How to install
