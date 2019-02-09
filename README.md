@@ -5,6 +5,6 @@ A codon analysis R package
 Use the following command to install the package:
 ```R
 library('devtools')
-install('kondonz')
-library(kondonz)
+install('kodonz')
+library(kodonz)
 ```
