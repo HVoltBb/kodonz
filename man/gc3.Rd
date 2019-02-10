@@ -7,7 +7,7 @@
 gc3(x)
 }
 \arguments{
-\item{x}{a list of objects of class KZsqns.}
+\item{x}{a list of KZsqns objects.}
 }
 \value{
 a number array of GC3s.

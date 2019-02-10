@@ -2,24 +2,30 @@
 % Please edit documentation in R/pminmax.r
 \name{pminmax}
 \alias{pminmax}
-\title{%MinMax of a coding DNA sequence}
+\title{\%MinMax of a coding DNA sequence}
 \usage{
 pminmax(x, z, cut, y = 0, spp = "")
 }
 \arguments{
-\item{x}{a char array of the codons for which %MinMax will be calculated}
+\item{x}{a char array of the codons for which \%MinMax will be calculated}
 
 \item{z}{the width of the sliding window.}
 
 \item{cut}{a named numeric array of the codon usage table of the host species. Each entry is the number of codons of genes from the reference species, and the name is the case insensitive three letter base char string of the codon.}
 
-\item{y}{a number denoting the codon table to be used. When \emph{cft} is specified, y also needs to be specified. 0 = standard codon table (default), 2 = vertibrate mitchodrial, 3 = ?, 4 = ?. When an option other than those mentioned above is provided, the standard codon table will be used}
+\item{y}{a number denoting the codon table to be used. When \emph{cut} is specified, {y} also needs to be specified. 0 = standard codon table (default), 2 = vertibrate mitchodrial (See dna2aa for additional options). When an option other than those mentioned above is provided, the standard codon table will be used}
 
-\item{spp}{a character string denoting the host species name on which the codon usage table is based. Four reference tables are available: 'ecoli', E. coli; 'insect', insect; 'yeast', yeast; 'celegans', C. elegans. When specified, this option overides \emph{cft}. These build-in codon usage tables are taken from https://www.genscript.com/tools/codon-frequency-table.}
+\item{spp}{a character string denoting the host species name on which the codon usage table is based. Sixteen build-in reference tables are available: 'ecoli', E. coli (standard code); 'insect', insect (standard code); 'yeast', yeast (standard code); 'celegans', C. elegans (standard code); 'drosophila', Drosophila melanogaster (standard code); 'human', human (standard code); 'mouse', mouse (standard code); 'rat', rat (standard code); 'pig', pig (standard code); 'pichia', Pichia pastoris (standard code); 'arabidopsis', Arabidopsis thaliana (standard code); 'streptomyces', Streptomyces (standard code); 'zea', Zea mays (standard code); 'nicotiana', Nicotiana tabacum (standard code); 'saccharomyces', Saccharomyces cerevisiae (standard code); 'cricetulus', Cricetulus griseus (standard code). When specified, this option overides {cut}.}
 }
 \description{
-Calculates the %MinMax (Clarke and Clark, 2008) of a DNA sequence coding a protein of interest.
+Calculates the \%MinMax (Clarke and Clark, 2008) of a DNA sequence coding a protein of interest.
+}
+\details{
+Frequently used codon frequency table in 16 expression host organisms were built-in based on Genscript [1]. In addition, when your host organism is not one of those built-in, you can supply a custom array of codon usage table and the corresponding codon table can be supplied using {cut} and {y} to calculate \%MinMax statistic for additional host organisms.
 }
 \examples{
 
+}
+\references{
+[1] https://www.genscript.com/tools/codon-frequency-table [retreaved 2/4/2019]
 }

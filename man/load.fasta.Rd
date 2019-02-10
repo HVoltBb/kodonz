@@ -4,15 +4,17 @@
 \alias{load.fasta}
 \title{A function to load fasta files}
 \usage{
-load.fasta(file, code = 0, ...)
+load.fasta(file = "n", x, ...)
 }
 \arguments{
-\item{file}{Name of the fasta file.}
+\item{file}{Name of the fasta file}
 
-\item{...}{additional parameters you might want to pass to the read.fasta function.}
+\item{x}{a character array of DNA sequence. Use "A", "T", "G" and "C" to denote the nucleatide composition. When a fasta file is also specified, the fasta file takes priority, and this character sequence is ignored}
+
+\item{...}{additional parameters you might want to pass to the seqinr::read.fasta function}
 }
 \value{
-A list of objects of class KZsqns.
+A list of objects of class KZsqns
 }
 \description{
 Loads the specified fasta file

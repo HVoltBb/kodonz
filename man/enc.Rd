@@ -4,12 +4,12 @@
 \alias{enc}
 \title{Effective number of codons}
 \usage{
-enc(x, codonTable = 0, formula = "w")
+enc(x, y = 0, formula = "w")
 }
 \arguments{
-\item{x}{a char list of codon sequences}
+\item{x}{a KZsqns object}
 
-\item{codonTable}{a number to assign the type of codon table to be used for the translation. 0 = standard codon table, 2 = vertibrate mitchodrial, . If no number is specified or an option other than those provided above is specified, there will be a warning and the standard codon table will be used}
+\item{y}{a number to assign the type of codon table to be used for the translation. 0 = standard codon table, 2 = vertibrate mitchodrial (See dna2aa for additional options). If no number is specified or an option other than those provided above is specified, there will be a warning and the standard codon table will be used}
 
 \item{formula}{a char array to denote the formula for calculating ENC. Options include: 'w': Wright's formula, 'f4-': Fuglsang's Ncf4- formula.}
 }
@@ -22,13 +22,17 @@ This function calculate the effective number of codons (ENC) using Wright's form
 \examples{
 dnalist = vector('list', 2)
 dnalist[[1]] = CodonTable2[sample(1:64, 1e4, TRUE),1]
+attr(dnalist[[1]], 'class') <- 'KZsqns'
 dnalist[[2]] = CodonTable2[sample(1:64, 1e4, TRUE),1]
-enc(x = dnalist, codonTable = 2) # Two numbers should be around 60 as there are 60 animo acid coding codons and 4 stop codons for codon table 2
+attr(dnalist[[2]], 'class') <- 'KZsqns'
+enc(x = dnalist, y = 2) # Two numbers should be around 60 as there are 60 animo acid coding codons and 4 stop codons for codon table 2
 
 dnalist = vector('list', 2)
 dnalist[[1]] = CodonTable2[sample(1:64, 1e4, TRUE),1]
+attr(dnalist[[1]], 'class') <- 'KZsqns'
 dnalist[[2]] = CodonTable2[sample(1:64, 1e4, TRUE),1]
-enc(x = dnalist, codonTable = 4) # Two numbers should be around 62 as there are 60 animo acid coding codons and 2 stop codons for codon table 4
+attr(dnalist[[2]], 'class') <- 'KZsqns'
+enc(x = dnalist, y = 4) # Two numbers should be around 62 as there are 60 animo acid coding codons and 2 stop codons for codon table 4
 }
 \references{
 Fuglsang, A., 2006 Estimating the "Effective Number of Codons": The Wright way of determining codon homozygosity leads to superior estimates. Genetics 172:1301-1307

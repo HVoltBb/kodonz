@@ -11,10 +11,10 @@ arg_check(x, mode, y)
 
 \item{mode}{a char array denoting the expected mode of the argument x}
 
-\item{y}{a number denoting the codon table to be used}
+\item{y}{a number denoting the codon table to be used. 0 = standard codon table, 2 = vertibrate mitchodrial, 3 = yeast mitochondrial, 4 = mold, protozoan, and Coelenterate mitochondrial and Mycoplasma/Spiroplasma, 5 = invertebrate mitochandrial, 6 = Ciliate, Dasycladacean and Hexamita nuclear, 9 = Echinoderm and flatworm mitochondrial, 10 = Euplotid nuclear, 11 = bacterial, Archaeal and plant plastid, 12 = alternative yeast nuclear, 13 = Ascidian mitochondrial, 14 = alternative flatworm mitochondrial, 16 = Chlorophycean mitochondrial, 21 = Trematode mitochondrial, 22 = Scenedesmus obliquus mitochondrial, 23 = Thraustochytrium mitochondrial, 24 = Pterobranchia mitochondrial, 25 = candidate division SR1 and Gracilibacteria, 26 = Pachysolen tannophilus nuclear, 29 = Mesodinium nuclear, 30 = Peritrich nuclear.}
 }
 \value{
-a numeric matrix of appropriate codon table
+a numeric matrix of the appropriate codon table
 }
 \description{
 Performs the usual checks of arguments consistency of codon sequences and codon table to be used

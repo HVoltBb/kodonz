@@ -9,7 +9,7 @@ rscu(x, y = 0, stop = FALSE)
 \arguments{
 \item{x}{a char array of codons}
 
-\item{y}{an optional number denoting the codon table to be used. 0 = standard codon table (default), 2 = vertibrate mitchodrial, 3 = ?, 4 = ?. When an option other than those mentioned above is provided, the standard codon table will be used}
+\item{y}{an optional number denoting the codon table to be used. 0 = standard codon table (default), 2 = vertibrate mitchodrial (See dna2aa for additional options). When an option other than those mentioned above is provided, the standard codon table will be used}
 
 \item{stop}{a optional boolean denoting whether the RSCU values for the stop codons should be returned. FALSE: NAs will be returned (default); TRUE: the RSCUs will be returned}
 }

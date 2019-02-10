@@ -2,20 +2,20 @@
 % Please edit documentation in R/gcx.r
 \name{gcx}
 \alias{gcx}
-\title{GCx of a gene}
+\title{GCx of a list of genes}
 \usage{
 gcx(x, pos = 1)
 }
 \arguments{
-\item{x}{a char array of codons}
+\item{x}{a list of KZsqns objects.}
 
-\item{pos}{the position of the codon for which GCx is calculated. 1: GC1; 2:GC2; 3: GC3; for any other values, the overall GC content will be calculated with a warning}
+\item{pos}{the position of the codon for which GCx is calculated. 1: GC1; 2:GC2; 3: GC3; 4:GC12}
 }
 \value{
-a number of the GCx of the gene
+a matrix of the GCx of the list of genes
 }
 \description{
-Calculates the GC1,2,3 and the overall GC content of a gene
+Calculates the GC1,2,3 and GC12 contents of a list of genes
 }
 \examples{
 
