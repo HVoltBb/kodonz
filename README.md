@@ -8,3 +8,5 @@ library('devtools')
 install('kodonz')
 library(kodonz)
 ```
+## Read the tutorial
+The tutorial is located under the docs/ folder. 
