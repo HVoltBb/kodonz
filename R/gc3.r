@@ -2,7 +2,7 @@
 #'
 #' Outputs an array of numbers, representing the proportion of codons with G/C bases in the third position
 #'
-#' @param x a list of objects of class KZsqns.
+#' @param x a list of KZsqns objects.
 #' @return a number array of GC3s.
 #'
 #' @examples
@@ -17,16 +17,10 @@
 #' @export
 
 gc3 <- function(x){
-  if(class(x)!='list') stop("A list of KZsqns is required. Use load.fasta() for importing DNA sequences.")
-
-  ans = numeric(length(x))
-  for(i in 1:length(x)){
-    if(class(x[[i]]!='KZsqns')) warning("KZsqns objects are expected")
-    gc = 0
-    for(j in x[[i]]){
-      if (substr(j, 3,3)=="G" || substr(j,3,3)=='C') gc = gc + 1
-    }
-    ans[i] = gc/length(x[[i]])
-  }
+  ans = matrix(0, length(x), 1)
+  colnames(ans) <- 'GC3'
+  rownames(ans) <- paste0('s_', 1:length(x))
+  temp = n3_freq(x)
+  ans[,1] = rowSums(temp[,c('G3', 'C3'), drop=F])
   return(ans)
 }
