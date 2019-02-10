@@ -1,5 +1,5 @@
 version 0.1
-* tutorial
+* tutorial 2/10/2019
 * add examples to methods
 * check for errors
 
