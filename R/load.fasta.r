@@ -32,11 +32,20 @@ load.fasta <- function(file='n', x,...){
     ele = temp[[i]]
     if(length(ele)%%3!=0) stop(paste0("\nThe length of sequence ",i," is not a multiple of 3. Check your sequence and try again.\n "))
     ubases = unique(ele)
-    if(!all(ubases %in% c("A", "T", "G", "C"))){
-      warning(paste0("\nSequence", i, " contains ambiguous base(s) or spacing(s), which will be removed from further analysis.\n"))
+    flag1 = all(ubases %in% c("A", "T", "G", "C", "a", "t", "g", "c", "-"))
+    flag2 = "-" %in% ubases
+    flag0 = FALSE
+    if (!flag1) {
+      warning(paste0("\nSequence", i, " contains ambiguous base(s), which will be removed from further analysis.\n"))
+      flag0 = TRUE
+    }
+    if(flag2){
+      flag0 = TRUE
+    }
+    if(flag0){
       ele = unlist(sapply(1:(length(ele)/3), fixx))
     }
-    bases0 = paste0(ele[c(T,F,F)], ele[c(F,T,F)], ele[c(F,F,T)]) # only keep codons with unambiguous bases
+    bases0 = paste0(toupper(ele[c(T,F,F)]), toupper(ele[c(F,T,F)]), toupper(ele[c(F,F,T)])) # only keep codons with unambiguous bases
     temp[[i]] = bases0
     attr(temp[[i]], "class") <- "KZsqns"
   }
