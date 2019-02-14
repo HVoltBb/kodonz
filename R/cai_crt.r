@@ -10,7 +10,11 @@
 #' [2] Bulmer, M. (1988). Are codon usage patterns in unicellular organisms determined by selection-mutation balance? Journal of Evolutionary Biology, 1(1), 15-26.
 #' @export
 
-cai_crt <- function(x, y, method=c("sharp", "bulmer")){
+cai_crt <- function(x, y=0, method=c("sharp", "bulmer")){
+  if(!is.list(x)) {
+    cat("Just one sequence?\n")
+    x = list(x)
+  }
   cTable = arg_check(x[[1]], 'KZsqns',y)
   ttx = lapply(x, table)
 
@@ -20,7 +24,6 @@ cai_crt <- function(x, y, method=c("sharp", "bulmer")){
   for (i in 1:length(ttx)){
     tx = colSums(rbind(tx+ttx[[i]][cTable[,1]]), na.rm = T)
   }
-  ## cat(which(tx==0))
 
   if(method[1] == "sharp"){
     tx[tx==0] <- 0.5
@@ -32,7 +35,7 @@ cai_crt <- function(x, y, method=c("sharp", "bulmer")){
     dx = which(cTable[,2]==j)
     if(sum(tx[dx])==0){
       degv[dx] = NA
-      warning('An animo acid is missing, and NAs will be produced for this animo acid')
+      cat('An animo acid is missing, and NAs will be produced for this animo acid\n')
     } else {
       degv[dx] = tx[dx]/max(tx[dx])
     }

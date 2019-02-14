@@ -17,6 +17,10 @@
 #' @export
 
 gc3 <- function(x){
+  if(!is.list(x)){
+    cat("Just one perhap very long sequence?\n")
+    x = list(x)
+  }
   ans = matrix(0, length(x), 1)
   colnames(ans) <- 'GC3'
   rownames(ans) <- paste0('s_', 1:length(x))

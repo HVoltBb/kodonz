@@ -6,7 +6,10 @@
 #' @export
 
 n3_freq <- function(x){
-  if(class(x)!='list') stop("A list of KZsqns is required. Use load.fasta() to import DNA sequences.")
+  if(!is.list(x)){
+    cat("Just one perhap very long sequence?\n")
+    x = list(x)
+  }
 
   ans = matrix(0, length(x), 4)
   for(i in 1:length(x)){

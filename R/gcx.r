@@ -10,7 +10,10 @@
 #' @export
 
 gcx <- function(x, pos=1){
-  if(class(x)!='list') stop("A list of KZsqns is required. Use load.fasta() to import DNA sequences.")
+  if(!is.list(x)){
+    cat("Just one perhap very long sequence?\n")
+    x = list(x)
+  }
   ans = matrix(0, length(x), 1)
   rownames(ans) <- paste0('s_', 1:length(x))
   indx = c(T,T,T)
@@ -38,7 +41,7 @@ gcx <- function(x, pos=1){
          })
   for(i in 1:length(x)){
     temp = table(strsplit(paste0(paste(x[[i]],collapse = ''), 'GGGCCC', sep=''), split = '')[[1]][indx])
-    ans[i,1] = (temp["G"] + temp["C"] - 2*adj)/length(x[[i]])
+    ans[i,1] = (temp["G"] + temp["C"] - 2*adj)/length(x[[i]])/adj
   }
   return(ans)
 }

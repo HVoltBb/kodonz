@@ -6,6 +6,10 @@
 #' @export
 
 augc_freq <- function(x){
+  if(!is.list(x)){
+    cat("Just one sequence?\n")
+    x = list(x)
+  }
   temp = base_freq(x)
   ans = cbind(temp[,'A',drop=F]+temp[,'T',drop=F], temp[, 'G', drop=F]+temp[, 'C', drop=F])
   colnames(ans) <- c('AT', 'GC')
