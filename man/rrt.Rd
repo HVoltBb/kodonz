@@ -11,12 +11,12 @@ rrt(x, cut, y = 0, spp)
 
 \item{cut}{a named numerical array of codon usage table. Case-insensitive three letter codon names are used. Numbers could be the actuall codon counts or scaled ratios}
 
-\item{y}{a number denoting the codon table to be used. When \emph{cut} is specified, \emph{y} also needs to be specified. 0 = standard codon table (default), 2 = vertibrate mitchodrial, 3 = ?, 4 = ?. When an option other than those mentioned above is provided, the standard codon table will be used}
+\item{y}{a number denoting the codon table to be used. When \emph{cut} is specified, \emph{y} also needs to be specified. 0 = standard codon table (default), 2 = vertibrate mitchodrial and see dna2aa for more options. When an option other than those mentioned above is provided, the standard codon table will be used}
 
-\item{spp}{a char string of the host species name for which the codon usage table will be used. Four build-in reference tables are available: 'ecoli', E. coli; 'insect', insect; 'yeast', yeast; 'celegans', C. elegans. When specified, this option overides \emph{cut}. These build-in codon usage tables are taken from https://www.genscript.com/tools/codon-frequency-table.}
+\item{spp}{a char string of the host species name for which the codon usage table will be used: 'ecoli', E. coli; 'insect', insect; 'yeast', yeast; 'celegans', C. elegans, and see pminmax for more options. When specified, this option overides \emph{cut}. These build-in codon usage tables are taken from https://www.genscript.com/tools/codon-frequency-table.}
 }
 \value{
-a char array of random reverse translated codons
+an KZsqns object of random reverse translated codons
 }
 \description{
 Randomly reverse translate an animo acid sequence into a DNA sequence according to a codon usage table and a codon table

@@ -7,9 +7,12 @@
 scuo(x, y = 0)
 }
 \arguments{
-\item{x}{a char sequence of codons}
+\item{x}{a KZsqns object of codon sequence or a list of such objects}
 
 \item{y}{a number to assign the type of codon table to be used for the translation. 0 = standard codon table, 2 = vertibrate mitchodrial, . If no number is specified or an option other than those provided above is specified, there will be a warning and the standard codon table will be used}
+}
+\value{
+a numeric array of synonymous codon usage order, or a list of such arrays if \emph{x} is a list
 }
 \description{
 Calculates the synonymous codon usage order of a codon sequence based on a codon table.

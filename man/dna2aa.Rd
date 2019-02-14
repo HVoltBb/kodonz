@@ -4,17 +4,17 @@
 \alias{dna2aa}
 \title{Translating a codon sequence to into animo-acids}
 \usage{
-dna2aa(dnaSequence, aaNoLetters = 3, codonTable = 0)
+dna2aa(x, aaNoLetters = 3, y = 0)
 }
 \arguments{
-\item{dnaSequence}{a character array of codons}
+\item{x}{a KZsqns object of codons or a list of such objects}
 
 \item{aaNoLetters}{a number to assign the format of animo acid. 1 = one-letter abbreviation, 3 = three-letter abbreviation. If it defaults into the 3-letter abbreviation when no number or a different number is specified}
 
-\item{codonTable}{a number to assign the type of codon table to be used for the translation. 0 = standard codon table, 2 = vertibrate mitchodrial, 3 = yeast mitochondrial, 4 = mold, protozoan, and Coelenterate mitochondrial and Mycoplasma/Spiroplasma, 5 = invertebrate mitochondrial, 6 = Ciliate, Dasycladacean and Hexamita nuclear, 9 = Echinoderm and flatworm mitochondrial, 10 = Euplotid nuclear, 11 = bacterial, Archaeal and plant plastid, 12 = alternative yeast nuclear, 13 = Ascidian mitochondrial, 14 = alternative flatworm mitochondrial, 16 = Chlorophycean mitochondrial, 21 = Trematode mitochondrial, 22 = Scenedesmus obliquus mitochondrial, 23 = Thraustochytrium mitochondrial, 24 = Pterobranchia mitochondrial, 25 = candidate division SR1 and Gracilibacteria, 26 = Pachysolen tannophilus nuclear, 29 = Mesodinium nuclear, 30 = Peritrich nuclear. If no number is specified or an option other than those provided above is specified, there will be a warning and the standard codon table will be used}
+\item{y}{a number to assign the type of codon table to be used for the translation. 0 = standard codon table, 2 = vertibrate mitchodrial, 3 = yeast mitochondrial, 4 = mold, protozoan, and Coelenterate mitochondrial and Mycoplasma/Spiroplasma, 5 = invertebrate mitochondrial, 6 = Ciliate, Dasycladacean and Hexamita nuclear, 9 = Echinoderm and flatworm mitochondrial, 10 = Euplotid nuclear, 11 = bacterial, Archaeal and plant plastid, 12 = alternative yeast nuclear, 13 = Ascidian mitochondrial, 14 = alternative flatworm mitochondrial, 16 = Chlorophycean mitochondrial, 21 = Trematode mitochondrial, 22 = Scenedesmus obliquus mitochondrial, 23 = Thraustochytrium mitochondrial, 24 = Pterobranchia mitochondrial, 25 = candidate division SR1 and Gracilibacteria, 26 = Pachysolen tannophilus nuclear, 29 = Mesodinium nuclear, 30 = Peritrich nuclear. If no number is specified or an option other than those provided above is specified, there will be a warning and the standard codon table will be used}
 }
 \value{
-a character array of animo-acids
+a character array of animo-acids, or a list of such arrays when \emph{x} is a list
 }
 \description{
 This function translate an array of codons into the corresponding amino acid sequence using the codon table of choice.

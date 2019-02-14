@@ -4,12 +4,14 @@
 \alias{enc}
 \title{Effective number of codons}
 \usage{
-enc(x, y = 0, formula = "w")
+enc(x, y = 0, spp.list = "n", formula = "w")
 }
 \arguments{
-\item{x}{a KZsqns object}
+\item{x}{a list of KZsqns objects}
 
 \item{y}{a number to assign the type of codon table to be used for the translation. 0 = standard codon table, 2 = vertibrate mitchodrial (See dna2aa for additional options). If no number is specified or an option other than those provided above is specified, there will be a warning and the standard codon table will be used}
+
+\item{spp.list}{an array indicating the the species identity of each KZsqns object in the list \emph{x}. The default option is to calculate an ENC for each KZsqns object. When \emph{spp.list} is specified, an ENC is calculated for each unique element of \emph{spp.list}}
 
 \item{formula}{a char array to denote the formula for calculating ENC. Options include: 'w': Wright's formula, 'f4-': Fuglsang's Ncf4- formula.}
 }

@@ -7,7 +7,7 @@
 rscu(x, y = 0, stop = FALSE, supplementory.info = FALSE)
 }
 \arguments{
-\item{x}{a char array of codons}
+\item{x}{a KZsqns object of codon sequence or a list of such objects}
 
 \item{y}{an optional number denoting the codon table to be used. 0 = standard codon table (default), 2 = vertibrate mitchodrial (See dna2aa for additional options). When an option other than those mentioned above is provided, the standard codon table will be used}
 
@@ -16,7 +16,7 @@ rscu(x, y = 0, stop = FALSE, supplementory.info = FALSE)
 \item{supplementory.info}{whether supplementory information should be returned. If TRUE, the top 5 and bottom 5 most frequently used codons will be returned in the result; if FALSE, no supplementory information will be returned, and this is the default option}
 }
 \value{
-a named list containing a numeric array of RSCUs for each animo acid, an ordered list the top 5 most frequently used codons, and an ordered list of the top 5 least frequently used codons
+a named list containing a numeric array of RSCUs for each animo acid, an ordered list the top 5 most frequently used codons, and an ordered list of the top 5 least frequently used codons. Or a list of such lists, when \emph{x} is a list of objects
 }
 \description{
 Calculates the relative synomynous codon usage (RSCU) for each codon.

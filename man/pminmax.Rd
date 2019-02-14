@@ -4,18 +4,21 @@
 \alias{pminmax}
 \title{\%MinMax of a coding DNA sequence}
 \usage{
-pminmax(x, z, cut, y = 0, spp = "")
+pminmax(x, z = 10, cut = "n", y = 0, spp = "ecoli")
 }
 \arguments{
-\item{x}{a char array of the codons for which \%MinMax will be calculated}
+\item{x}{a KZsqns object of the codons for which \%MinMax will be calculated; when a list of such objects are provided, \%MinMax will be calculated for the first object only}
 
-\item{z}{the width of the sliding window.}
+\item{z}{the width of the sliding window. Default 10}
 
-\item{cut}{a named numeric array of the codon usage table of the host species. Each entry is the number of codons of genes from the reference species, and the name is the case insensitive three letter base char string of the codon.}
+\item{cut}{a named numeric array of the codon usage table of the host species. Each entry is the number of codons of genes from the reference species, and the name is the case insensitive three letter base char string of the codon. Optional if \emph{spp} is specified}
 
 \item{y}{a number denoting the codon table to be used. When \emph{cut} is specified, {y} also needs to be specified. 0 = standard codon table (default), 2 = vertibrate mitchodrial (See dna2aa for additional options). When an option other than those mentioned above is provided, the standard codon table will be used}
 
-\item{spp}{a character string denoting the host species name on which the codon usage table is based. Sixteen build-in reference tables are available: 'ecoli', E. coli (standard code); 'insect', insect (standard code); 'yeast', yeast (standard code); 'celegans', C. elegans (standard code); 'drosophila', Drosophila melanogaster (standard code); 'human', human (standard code); 'mouse', mouse (standard code); 'rat', rat (standard code); 'pig', pig (standard code); 'pichia', Pichia pastoris (standard code); 'arabidopsis', Arabidopsis thaliana (standard code); 'streptomyces', Streptomyces (standard code); 'zea', Zea mays (standard code); 'nicotiana', Nicotiana tabacum (standard code); 'saccharomyces', Saccharomyces cerevisiae (standard code); 'cricetulus', Cricetulus griseus (standard code). When specified, this option overides {cut}.}
+\item{spp}{a character string denoting the host species name on which the codon usage table is based. Sixteen build-in reference tables are available: 'ecoli', E. coli (standard code), default option; 'insect', insect (standard code); 'yeast', yeast (standard code); 'celegans', C. elegans (standard code); 'drosophila', Drosophila melanogaster (standard code); 'human', human (standard code); 'mouse', mouse (standard code); 'rat', rat (standard code); 'pig', pig (standard code); 'pichia', Pichia pastoris (standard code); 'arabidopsis', Arabidopsis thaliana (standard code); 'streptomyces', Streptomyces (standard code); 'zea', Zea mays (standard code); 'nicotiana', Nicotiana tabacum (standard code); 'saccharomyces', Saccharomyces cerevisiae (standard code); 'cricetulus', Cricetulus griseus (standard code). When specified, this option overides {cut}.}
+}
+\value{
+a numerical array of \%MinMax values
 }
 \description{
 Calculates the \%MinMax (Clarke and Clark, 2008) of a DNA sequence coding a protein of interest.

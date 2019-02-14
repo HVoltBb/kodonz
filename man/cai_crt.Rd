@@ -4,7 +4,7 @@
 \alias{cai_crt}
 \title{Custom CAI reference table}
 \usage{
-cai_crt(x, y, method = c("sharp", "bulmer"))
+cai_crt(x, y = 0, method = c("sharp", "bulmer"))
 }
 \arguments{
 \item{x}{a list of KZsqns object, from which the reference table will be calculated}
