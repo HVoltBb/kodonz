@@ -1,8 +1,8 @@
 Package: kodonz
 Title: A Comprehensive Codon Analysis Toolbox
 Version: 0.1.0
-Authors@R: c(person("Can", "Zhou", email = "eidotog@gmail.com", role = c("aut", "cre")),
-	      person("Lingming", "Kong", email = "kong@mail.com", role = "aut"))
+Authors@R: c(person("Can", "Zhou", email = "eidotog@gmail.com", role = c("aut", "cre")), 
+	person("Lingming", "Kong", email = "kong@mail.com", role = "aut"))
 Description: Codon analysis toolbox
 Depends: R (>= 3.4.3)
 License: MIT
