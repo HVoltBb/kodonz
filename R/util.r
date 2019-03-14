@@ -176,6 +176,7 @@ scuo_ = function(x, y){
   haa[is.na(haa)] = 0
   scuo_aa = (hmax-haa)/hmax
   aa = table(dna2aa(x, 1, y))[names(degv)]
+  aa[is.na(aa)] = 0
   return(crossprod(scuo_aa, aa)/sum(aa))
 }
 
