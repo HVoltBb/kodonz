@@ -1,5 +1,6 @@
 ---
- fbcomments: yes
+layout: post
+fbcomments: yes
 ---
 
 # _kodonz_
