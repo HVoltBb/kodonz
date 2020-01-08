@@ -1,8 +1,3 @@
----
-layout: post
-fbcomments: yes
----
-
 # _kodonz_
 A comprehensive codon analysis R package
 
