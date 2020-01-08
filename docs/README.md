@@ -1,3 +1,7 @@
+---
+ fbcomments: yes
+---
+
 # _kodonz_
 A comprehensive codon analysis R package
 
@@ -22,3 +26,10 @@ library(kodonz)
 
 ## Read the tutorial
 The tutorial is located under the kodonz/docs/ folder. 
+
+  {% include facebook-comments.html %}
+  {% if page.fbcomments %}
+    <hr/>
+    <h4>Comments</h4>
+    <div class="fb-comments" data-href="http://YOUR_SITE_NAME{{ page.url }}" data-colorscheme="dark" data-num-posts="4" data-width="706"></div>
+  {% endif %}
