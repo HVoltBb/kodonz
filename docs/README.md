@@ -1,4 +1,4 @@
-# _kodonz_v0.1.1
+# _kodonz_ v0.1.1
 A comprehensive codon analysis R package
 
 ## How to install
