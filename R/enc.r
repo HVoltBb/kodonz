@@ -7,6 +7,8 @@
 #' @param y a number to assign the type of codon table to be used for the translation. 0 = standard codon table, 2 = vertibrate mitchodrial (See dna2aa for additional options). If no number is specified or an option other than those provided above is specified, there will be a warning and the standard codon table will be used
 #' @param formula a char array to denote the formula for calculating ENC. Options include: 'w': Wright's formula, 'f4-': Fuglsang's Ncf4- formula.
 #' @return an numeric array of the ENCs
+#' @section Warning:
+#' According to Wright's formula, the ENC is the sum of the heterogeneity of all the degeneracy classes. When all the codons belonging to a degeneracy class is missing, the ENC can not be calculated. A warning will result when it happens. The most likely situation leading to such a condition is that the sequence of codons is too short. When the sequence is short, the calculated ENC is likely to deviate much from the underlying value. It is recommended to increase the sample size to solve this issue when Wright's formula is prefered. Alternatively, Fuglsang's Ncf4- formula could be used instead.
 #' @references
 #' Fuglsang, A., 2006 Estimating the "Effective Number of Codons": The Wright way of determining codon homozygosity leads to superior estimates. Genetics 172:1301-1307
 #' Wright, F., 1990 The 'effective number of codons' used in a gene. Gene 87: 23-29.

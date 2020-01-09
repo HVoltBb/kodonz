@@ -21,6 +21,11 @@ an numeric array of the ENCs
 \description{
 This function calculate the effective number of codons (ENC) using Wright's formula.
 }
+\section{Warning}{
+
+According to Wright's formula, the ENC is the sum of the heterogeneity of all the degeneracy classes. When all the codons belonging to a degeneracy class is missing, the ENC can not be calculated. A warning will result when it happens. The most likely situation leading to such a condition is that the sequence of codons is too short. When the sequence is short, the calculated ENC is likely to deviate much from the underlying value. It is recommended to increase the sample size to solve this issue when Wright's formula is prefered. Alternatively, Fuglsang's Ncf4- formula could be used instead.
+}
+
 \examples{
 dnalist = vector('list', 2)
 dnalist[[1]] = CodonTable2[sample(1:64, 1e4, TRUE),1]
